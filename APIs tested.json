@@ -1,0 +1,344 @@
+{
+  "v": 8,
+  "name": "Healthcare",
+  "folders": [],
+  "requests": [
+    {
+      "v": "13",
+      "name": "accounts create",
+      "method": "POST",
+      "endpoint": "http://127.0.0.1:8000/api/auth/register/",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"email\": \"test@example.com\",\n  \"username\": \"testuser\",\n  \"password\": \"securepassword123\"\n}\n"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "13",
+      "name": "accounts login",
+      "method": "POST",
+      "endpoint": "http://127.0.0.1:8000/api/auth/login/",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"email\": \"shreyasmunge@gmail.com\",\n  \"password\": \"shreyas07\"\n}"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "13",
+      "name": "Create patient",
+      "method": "POST",
+      "endpoint": "http://127.0.0.1:8000/api/patients/",
+      "params": [],
+      "headers": [
+        {
+          "key": "Authorization",
+          "value": "Bearer access_token_here",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "none",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"name\": \"Shreyas\",\n  \"age\": 30,\n  \"disease\": \"Flu\"\n}\n"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "13",
+      "name": "Get all patients created by a user",
+      "method": "GET",
+      "endpoint": "http://127.0.0.1:8000/api/patients/",
+      "params": [],
+      "headers": [
+        {
+          "key": "Authorization",
+          "value": "Bearer access_token_here",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "13",
+      "name": "get patient by id",
+      "method": "GET",
+      "endpoint": "http://127.0.0.1:8000/api/patients/2/",
+      "params": [],
+      "headers": [
+        {
+          "key": "Authorization",
+          "value": "Bearer access_token_here",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "13",
+      "name": "updated patient ",
+      "method": "PUT",
+      "endpoint": "http://127.0.0.1:8000/api/patients/2/",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"name\": \"John Smith\",\n  \"age\": 35,\n  \"disease\": \"Cold\"\n}\n"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "13",
+      "name": "delete patient",
+      "method": "DELETE",
+      "endpoint": "http://127.0.0.1:8000/api/patients/2/",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "13",
+      "name": "Create Doctor",
+      "method": "POST",
+      "endpoint": "http://127.0.0.1:8000/api/doctors/",
+      "params": [],
+      "headers": [
+        {
+          "key": "Authorization",
+          "value": "Bearer access_token_here",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "bearer",
+        "token":"access_token_here",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"name\": \"Dr. Smith\",\n  \"specialization\": \"Cardiology\"\n}\n"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "13",
+      "name": "Get Doctors / id ",
+      "method": "GET",
+      "endpoint": "http://127.0.0.1:8000/api/doctors/",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "13",
+      "name": "Modify doctors",
+      "method": "PUT",
+      "endpoint": "http://127.0.0.1:8000/api/doctors/1/",
+      "params": [],
+      "headers": [
+        {
+          "key": "Authorization",
+          "value": "Bearer access_token_here",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"name\": \"Dr. John Smith\",\n  \"specialization\": \"Neurology\"\n}\n"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "13",
+      "name": "delete doctor",
+      "method": "DELETE",
+      "endpoint": "http://127.0.0.1:8000/api/doctors/1/",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "13",
+      "name": "map patients to doctor",
+      "method": "POST",
+      "endpoint": "http://127.0.0.1:8000/api/mappings/",
+      "params": [],
+      "headers": [
+        {
+          "key": "Authorization",
+          "value": "Bearer access_token_here",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"patient\": 1,\n  \"doctor\": 1\n}\n"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "13",
+      "name": "get mappings",
+      "method": "GET",
+      "endpoint": "http://127.0.0.1:8000/api/mappings/",
+      "params": [],
+      "headers": [
+        {
+          "key": "Authorization",
+          "value": "Bearer access_token_here",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "bearer",
+        "token":"access_token_here",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "13",
+      "name": "delete mappings",
+      "method": "DELETE",
+      "endpoint": "http://127.0.0.1:8000/api/mappings/1/",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    }
+  ],
+  "auth": {
+    "authActive": true,
+    "authType": "none"
+  },
+  "headers": [],
+  "_ref_id": "coll_mc6741fw_c9961463-953e-42d0-8424-67af2d5cce42"
+}
